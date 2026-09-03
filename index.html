@@ -144,13 +144,20 @@
   .brands{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2);padding:26px 0}
   .brands .cap{text-align:center;color:var(--muted);font-size:12.5px;font-weight:700;letter-spacing:.14em;
     text-transform:uppercase;margin-bottom:18px}
-  .marquee{display:flex;gap:14px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-           mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-  .track{display:flex;gap:14px;flex:0 0 auto;animation:scroll 26s linear infinite}
-  .brand-chip{flex:0 0 auto;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line-2);
-    border-radius:12px;padding:13px 20px;font-family:"Archivo";font-weight:800;font-size:17px;color:var(--navy);white-space:nowrap;box-shadow:var(--shadow-sm)}
-  .brand-chip span{width:8px;height:8px;border-radius:50%;background:var(--red)}
-  .brand-chip:nth-child(even) span{background:var(--blue)}
+  .marquee{display:flex;gap:14px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+           mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+  .marquee + .marquee{margin-top:14px}
+  .track{display:flex;gap:14px;flex:0 0 auto;animation:scroll 46s linear infinite;will-change:transform}
+  .track.rev{animation-direction:reverse;animation-duration:52s}
+  .marquee:hover .track{animation-play-state:paused}
+  .blogo{flex:0 0 auto;width:168px;height:74px;display:grid;place-items:center;background:#fff;
+    border:1px solid var(--line-2);border-radius:12px;padding:10px 14px;box-shadow:var(--shadow-sm);
+    transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+  .blogo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;
+    transition:transform .25s ease}
+  .blogo:hover{transform:translateY(-4px);border-color:#c3d0e6;box-shadow:var(--shadow)}
+  .blogo:hover img{transform:scale(1.05)}
+  @media(min-width:760px){.blogo{width:196px;height:82px}}
   @keyframes scroll{to{transform:translateX(-50%)}}
 
   .grid{display:grid;gap:18px}
@@ -318,7 +325,7 @@
         <span data-t="hero_note">Bilingual EN/ES · Mon–Fri 8am–4pm · Same-day pickup in Fresno</span>
       </div>
       <div class="hero-stats reveal">
-        <div><div class="n">6<b>+</b></div><div class="l" data-t="stat1">Trusted brands</div></div>
+        <div><div class="n">20<b>+</b></div><div class="l" data-t="stat1">Trusted brands</div></div>
         <div><div class="n">100<b>%</b></div><div class="l" data-t="stat2">Bilingual service</div></div>
         <div><div class="n" data-t="stat3n">Wholesale</div><div class="l" data-t="stat3">for the trade</div></div>
       </div>
@@ -355,18 +362,50 @@
     <div class="cap" data-t="brands_cap">Authorized distributor of the brands the pros trust</div>
     <div class="marquee">
       <div class="track">
-        <div class="brand-chip"><span></span>All-O-Matic</div>
-        <div class="brand-chip"><span></span>DoorKing (DKS)</div>
-        <div class="brand-chip"><span></span>LiftMaster</div>
-        <div class="brand-chip"><span></span>Ramset</div>
-        <div class="brand-chip"><span></span>Lockey USA</div>
-        <div class="brand-chip"><span></span>Cartell</div>
-        <div class="brand-chip"><span></span>All-O-Matic</div>
-        <div class="brand-chip"><span></span>DoorKing (DKS)</div>
-        <div class="brand-chip"><span></span>LiftMaster</div>
-        <div class="brand-chip"><span></span>Ramset</div>
-        <div class="brand-chip"><span></span>Lockey USA</div>
-        <div class="brand-chip"><span></span>Cartell</div>
+        <div class="blogo"><img src="assets/brands/all-o-matic.webp" alt="All-O-Matic" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/liftmaster.webp" alt="LiftMaster" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/doorking.webp" alt="DoorKing (DKS)" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/nice.webp" alt="Nice North America" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/ramset.webp" alt="Ramset" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/aes.webp" alt="AES Global" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/seco-larm.webp" alt="Seco-Larm" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/cartell.webp" alt="Cartell" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/emx.webp" alt="EMX Industries" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/nationwide.webp" alt="Nationwide Industries" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/all-o-matic.webp" alt="All-O-Matic" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/liftmaster.webp" alt="LiftMaster" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/doorking.webp" alt="DoorKing (DKS)" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/nice.webp" alt="Nice North America" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/ramset.webp" alt="Ramset" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/aes.webp" alt="AES Global" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/seco-larm.webp" alt="Seco-Larm" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/cartell.webp" alt="Cartell" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/emx.webp" alt="EMX Industries" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/nationwide.webp" alt="Nationwide Industries" loading="lazy" /></div>
+      </div>
+    </div>
+    <div class="marquee">
+      <div class="track rev">
+        <div class="blogo"><img src="assets/brands/lockey.webp" alt="Lockey USA" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/bd-loops.webp" alt="BD Loops" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/diablo.webp" alt="Diablo Controls" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/mk-battery.webp" alt="MK Battery" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/access-one.webp" alt="Access One Technologies" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/ameresco.webp" alt="Ameresco Solar" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/doorbird.webp" alt="DoorBird" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/locinox.webp" alt="Locinox USA" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/platinum.webp" alt="Platinum Access Systems" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/linear.webp" alt="Linear" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/lockey.webp" alt="Lockey USA" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/bd-loops.webp" alt="BD Loops" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/diablo.webp" alt="Diablo Controls" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/mk-battery.webp" alt="MK Battery" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/access-one.webp" alt="Access One Technologies" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/ameresco.webp" alt="Ameresco Solar" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/doorbird.webp" alt="DoorBird" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/locinox.webp" alt="Locinox USA" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/platinum.webp" alt="Platinum Access Systems" loading="lazy" /></div>
+        <div class="blogo"><img src="assets/brands/linear.webp" alt="Linear" loading="lazy" /></div>
       </div>
     </div>
   </div>
@@ -379,7 +418,7 @@
       <div>
         <span class="kicker reveal" data-t="about_kicker">Who we are</span>
         <h2 class="big reveal" data-t="about_h2">Real warehouse. Real stock. Real service.</h2>
-        <p class="lead reveal" data-t="about_p1">AutoGate Supply is a wholesale supplier of high-quality gate operators, gate supplies and accessories in Fresno, CA. Contractors, installers, welders, fence companies and garage-door techs source their parts here — and pick them up the same day.</p>
+        <p class="lead reveal" data-t="about_p1">AutoGate Supply is a wholesale supplier of high-quality gate operators, gate supplies and accessories in Fresno, CA. Contractors, installers, welders, fence companies and garage-door techs can find their parts here and pick them up the same day.</p>
         <div class="callout reveal">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4m0 4h.01M10.3 3.9 2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg></span>
           <div><b data-t="about_call_t">We supply — we don't install.</b><p data-t="about_call_p">AutoGate Supply is a wholesale distributor. We equip the professionals who do the installations. Need an installer? Just ask and we'll point you the right way.</p></div>
@@ -489,7 +528,7 @@
   <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
     <h2 class="reveal" data-t="final_h2">Need parts today? Let's get you what you need.</h2>
-    <p class="reveal" data-t="final_p">One message and we'll check stock, quote you, and have it ready for pickup in Fresno.</p>
+    <p class="reveal" data-t="final_p">One message and we'll check our stock, quote you, and have it ready for pickup in Fresno.</p>
     <a class="btn btn-red wa reveal" href="https://wa.me/15592817238" target="_blank" rel="noopener" data-wa>
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.14A11.87 11.87 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.5 11.82 11.82 0 0 1 3.48 8.4c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.7-1.45L.06 24zM6.6 20.13c1.68.99 3.28 1.58 5.45 1.58 5.45 0 9.9-4.43 9.9-9.88 0-5.46-4.43-9.9-9.9-9.9-5.46 0-9.9 4.44-9.9 9.9 0 2.28.67 3.98 1.79 5.76l-.99 3.62 3.65-.96zM17.4 14.6c-.07-.12-.27-.2-.57-.35-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.48-.5-.67-.5l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.2 1.87.12.57-.08 1.76-.72 2-1.42.25-.7.25-1.29.17-1.42z"/></svg>
       <span data-t="final_cta">Get a quote on WhatsApp</span>
@@ -527,10 +566,15 @@
       </div>
       <div>
         <h4 data-t="foot_brands">Brands</h4>
-        <span class="lk">All-O-Matic</span>
-        <span class="lk">DoorKing (DKS)</span>
-        <span class="lk">LiftMaster · Ramset</span>
-        <span class="lk">Lockey USA · Cartell</span>
+        <span class="lk">All-O-Matic · LiftMaster</span>
+        <span class="lk">DoorKing (DKS) · Ramset</span>
+        <span class="lk">Nice · Linear · AES Global</span>
+        <span class="lk">Seco-Larm · Cartell · EMX</span>
+        <span class="lk">Nationwide · Lockey USA</span>
+        <span class="lk">BD Loops · Diablo Controls</span>
+        <span class="lk">MK Battery · Ameresco Solar</span>
+        <span class="lk">DoorBird · Locinox · Platinum</span>
+        <span class="lk" data-t="foot_more">Access One and more</span>
       </div>
     </div>
     <div class="foot-bottom">
@@ -564,7 +608,7 @@
     brands_cap:["Authorized distributor of the brands the pros trust","Distribuidor autorizado de las marcas en las que confían los profesionales"],
     about_kicker:["Who we are","Quiénes somos"],
     about_h2:["Real warehouse. Real stock. Real service.","Bodega real. Stock real. Servicio real."],
-    about_p1:["AutoGate Supply is a wholesale supplier of high-quality gate operators, gate supplies and accessories in Fresno, CA. Contractors, installers, welders, fence companies and garage-door techs source their parts here — and pick them up the same day.","AutoGate Supply es proveedor mayorista de operadores de portón, insumos y accesorios de alta calidad en Fresno, CA. Contratistas, instaladores, herreros, empresas de cercas y técnicos de puertas de garaje surten sus repuestos aquí — y los recogen el mismo día."],
+    about_p1:["AutoGate Supply is a wholesale supplier of high-quality gate operators, gate supplies and accessories in Fresno, CA. Contractors, installers, welders, fence companies and garage-door techs can find their parts here and pick them up the same day.","AutoGate Supply es proveedor mayorista de operadores de portón, insumos y accesorios de alta calidad en Fresno, CA. Contratistas, instaladores, herreros, empresas de cercas y técnicos de puertas de garaje pueden encontrar sus repuestos aquí y recogerlos el mismo día."],
     about_call_t:["We supply — we don't install.","Proveemos — no instalamos."],
     about_call_p:["AutoGate Supply is a wholesale distributor. We equip the professionals who do the installations. Need an installer? Just ask and we'll point you the right way.","AutoGate Supply es un distribuidor mayorista. Equipamos a los profesionales que hacen las instalaciones. ¿Necesitas un instalador? Pregúntanos y te orientamos."],
     prod_kicker:["What we carry","Lo que manejamos"],
@@ -588,12 +632,12 @@
     visit_soc_k:["Follow us","Síguenos"],
     visit_cta:["Message us on WhatsApp","Escríbenos por WhatsApp"],
     final_h2:["Need parts today? Let's get you what you need.","¿Necesitas repuestos hoy? Te conseguimos lo que buscas."],
-    final_p:["One message and we'll check stock, quote you, and have it ready for pickup in Fresno.","Un mensaje y revisamos stock, te cotizamos y lo dejamos listo para recoger en Fresno."],
+    final_p:["One message and we'll check our stock, quote you, and have it ready for pickup in Fresno.","Un mensaje y revisamos nuestro stock, te cotizamos y lo dejamos listo para recoger en Fresno."],
     final_cta:["Get a quote on WhatsApp","Cotiza por WhatsApp"],
     final_note:["We usually reply within minutes — in English or Spanish.","Solemos responder en minutos — en inglés o español."],
     foot_tag:["Supplier of high-quality gate operators, gate supplies and accessories. Best prices in town.","Proveedor de operadores de portón, insumos y accesorios de alta calidad. Los mejores precios de la ciudad."],
     foot_visit:["Visit","Visítanos"], foot_hours:["Mon–Fri · 8am–4pm","Lun–Vie · 8am–4pm"],
-    foot_brands:["Brands","Marcas"], foot_rights:["All rights reserved.","Todos los derechos reservados."],
+    foot_brands:["Brands","Marcas"], foot_more:["Access One and more","Access One y más"], foot_rights:["All rights reserved.","Todos los derechos reservados."],
     foot_note:["Wholesale distributor · We do not perform installations","Distribuidor mayorista · No realizamos instalaciones"],
     sticky_cta:["Quote on WhatsApp","Cotiza por WhatsApp"]
   };
